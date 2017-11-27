@@ -1,0 +1,74 @@
+body {
+    background: url("img/body-bg.png") repeat-x 0 top #638a79 ;
+    font: 13px Arial;
+    line-height: 18px;
+    color: #333;
+}
+
+.content {
+    width: 840px;
+    background-color: #fff;
+    margin:100px auto 0;
+}
+
+.content .content-top {
+    height: 12px;
+    background: url(img/content-bg.png) 0 0;
+}
+
+.content .content-bottom {
+    height: 12px;
+    background: url(img/content-bg.png) 840px 0;
+}
+
+.content .content-middle {
+    padding: 20px 30px;
+}
+
+h1 {
+    font-size: 26px;
+    line-height:36px;
+    font-weight: normal;
+    color: #2b8c57;
+    margin: 0 0 10px 0;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 36px;
+    color: #2b8c57;
+    margin: 30px 0 15px 0;
+}
+
+div.block-1 {
+    color: #fff;
+    font-size: 12px;
+    font-style: italic;
+    padding: 20px 30px;
+    background: url(img/block-1-bg.png) repeat-x #2b8c57 ;
+}
+
+div.block-2 {
+    color: #fff;
+    font-style: italic;
+    font-size: 12px;
+    padding:20px 30px;
+    background: url(img/picture-1.png)  #356149 no-repeat right bottom;
+}
+
+a.button {
+    background: url(img/button-1.png) no-repeat 0 0;
+    display: block;
+    height: 38px;
+    text-decoration: none;
+}
+
+a.button:hover {
+    background: url(img/button-1.png) no-repeat 0 -38px;
+}
+
+a.button:active {
+    background: url(img/button-1.png) no-repeat 0 -76px;
+}
