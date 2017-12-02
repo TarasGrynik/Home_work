@@ -53,7 +53,7 @@
     height: 610px;
     flex-wrap: wrap;
     justify-content: center;
-    align-content: baseline;
+    align-content: flex-start;
 }
 
 .menu_block {
@@ -228,6 +228,7 @@
         align-self: flex-start;
         margin-left: 10px;
     }
+
     .cards_about:nth-child(1) {
         display: block;
     }
@@ -243,7 +244,10 @@
         height: 40px;
         width: 90%;
     }
+
     .footer {
         height: auto;
     }
 }
+
+/*end queries*/
