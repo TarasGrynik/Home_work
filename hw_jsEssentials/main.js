@@ -10,7 +10,7 @@ function cityName() {
         console.log(message);
 
     } else {
-        alert("You entered incorrect data");
+        alert("You entered incorrect data, write again!");
         cityName();
     }
 }
