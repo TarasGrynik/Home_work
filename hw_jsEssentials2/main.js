@@ -8,7 +8,8 @@ function numeric() {
     var roundDol = convDollars.toFixed(3);
     var roundEur = convEuros.toFixed(3);
 
-    if (!isNaN(parseFloat(euros)) && isFinite(euros)) {
+    if (!isNaN(parseFloat(euros)) && isFinite(euros) && !isNaN(parseFloat(dollars)) && isFinite(dollars) && Math.sign(dollars) !== -1 && Math.sign(euros) !== -1) {
+
        return alert(euros + " euros are equal " + roundEur + " grns, " + dollars + " dollars are equal " + roundDol + " grns, " + " one euro is equal " + 1.17 + " dollars.");
 
     } else {
