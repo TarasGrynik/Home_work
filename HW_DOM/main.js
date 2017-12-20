@@ -2,7 +2,7 @@
     var createForm = document.createElement('form');
     document.body.appendChild(createForm);
     createForm.setAttribute('name', 'login');
-    // createForm.setAttribute('action', 'google.com');
+    createForm.setAttribute('action', 'google.com');
 
     var getForm = document.querySelector('form');
 
@@ -49,8 +49,7 @@
         getForm.addEventListener('submit', function (event) {
             var email = document.querySelector('form input:nth-child(2)').value;
 
-            if (email.match(reg)) {
-            } else {
+            if (!email.match(reg)) {
                 alert('You must write username with "user_" at first!!');
                 return event.preventDefault();
             }
