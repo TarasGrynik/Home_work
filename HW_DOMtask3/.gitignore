@@ -1,2 +1,4 @@
-# file: ~/.gitignore_global
+# IntellijIdea files
+*.iml
 .idea
+out
