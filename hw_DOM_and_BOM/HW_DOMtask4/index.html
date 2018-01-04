@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM&BOM language</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h3>Please, choose your language</h3>
+    <div id="languages">
+        <label>
+            <input type="radio" name="lang" id="ua">UA
+        </label>
+        <label>
+            <input type="radio" name="lang" id="ru">RU
+        </label>
+        <label>
+            <input type="radio" name="lang" id="eng">ENG
+        </label>
+    </div>
+
+    <div id="welcome-message">
+        <span class="lang lang-ua">Привіт</span>
+        <span class="lang lang-ru">Привет</span>
+        <span class="lang lang-eng">Hello</span>
+        <span class="userName">, username!</span>
+
+        <span class="lang lang-ua">Раді тебе бачити!</span>
+        <span class="lang lang-ru">Рады тебя видеть!</span>
+        <span class="lang lang-eng">Glad, to see you!</span>
+    </div>
+    <p id="greeting"></p>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
