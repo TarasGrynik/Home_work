@@ -1,14 +1,19 @@
 (function () {
+    function getUserName() {
+        var userName = prompt('Please, enter your name!', 'username');
+        if (userName === null || userName === undefined || userName == '') {
+            getUserName();
+        }
+        localStorage.setItem('userName', JSON.stringify(userName));
+        var userWithLocalStorage = JSON.parse(localStorage.getItem('userName'));
+        var changeUserName = userWithLocalStorage.charAt(0).toUpperCase() + userWithLocalStorage.slice(1) + ' ,';
+        document.querySelector('.userName').innerHTML = changeUserName;
+    }
 
-    var userName = prompt('Please, enter your name!', 'username');
-    localStorage.setItem('userName', JSON.stringify(userName));
-    var userWithLocalStorage = JSON.parse(localStorage.getItem('userName'));
-
-    var changeUserName = userWithLocalStorage.charAt(0).toUpperCase() + userWithLocalStorage.slice(1) + ' ,';
-    document.querySelector('.userName').innerHTML = changeUserName;
+    getUserName();
 
     var applyLanguage = function (lang) {
-        alert('Now language is: ' + lang);
+        // alert('Now language is: ' + lang);
     };
 
     function defLang() {
@@ -33,7 +38,7 @@
             applyLanguage(currentLang);
 
             for (var k = 0; k < elemWithClassVisible.length; k++) {
-                console.log(elemWithClassVisible[k]);
+                // console.log(elemWithClassVisible[k]);
                 elemWithClassVisible[k].classList.remove('visible');
             }
 
