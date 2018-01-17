@@ -13,10 +13,10 @@ for (var key in navigatorMessageMap) {
         if (navigator.platform === 'Win32') {
             var $name = document.querySelector('.download-message[data-version="windows"]');
             $name.classList.add('showMessage');
-        } else if (navigator.platform === 'macos') {
+        } else if (navigator.platform === 'MacIntel') {
             var $macOS = document.querySelector('.download-message[data-version="macos"]');
             $macOS.classList.add('showMessage');
-        } else if (navigator.platform === 'macos') {
+        } else if (navigator.platform === 'Linux') {
             var $linux = document.querySelector('.download-message[data-version="linux"]');
             $linux.classList.add('showMessage');
         } else {
