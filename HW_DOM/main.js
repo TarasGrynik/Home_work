@@ -16,7 +16,6 @@
             appInp.setAttribute(setAtr, nameAtr);
             appInp.setAttribute(setAtr1, nameAtr1);
             appInp.setAttribute(setAtr2, nameAtr2);
-
         }
 
         inp('input', 'type', 'text', 'name', 'age', 'placeholder', 'age');
@@ -31,16 +30,17 @@
         function check() {
             getForm.addEventListener('submit', function (event) {
                 var age = document.querySelector('form > input:first-child').value;
-                if (!isNaN(age) && age > 0 && age <= 150) {
+                var regAge = /^[0-9]*$/;
+
+                if (!isNaN(age) && age > 0 && age <= 150 && age.match(regAge)) {
                 } else {
-                    alert('This must be number from 1 to 150!');
+                    alert('This must be number from 1 to 150 and only number!');
                     return event.preventDefault();
                 }
             });
         }
 
         check();
-
     }
 
     createInput();
@@ -72,7 +72,6 @@
                 alert('Your data is invalid, please rewrite it!');
                 return event.preventDefault();
             }
-
         });
     }
 
