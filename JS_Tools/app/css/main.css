@@ -1,0 +1,20 @@
+body {
+  font-size: 22px;
+  cursor: pointer; }
+
+body {
+  background-color: yellow; }
+
+p {
+  background: #3bbfce;
+  border: 1px solid black;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  display: inline-block;
+  padding: 0 10px; }
+
+#time {
+  font-size: 60px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #2b9eab; }
