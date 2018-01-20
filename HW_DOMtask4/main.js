@@ -1,53 +1,66 @@
 (function () {
-    function getUserName() {
-        var userName = prompt('Please, enter your name!', 'username');
-        if (userName === null || userName === undefined || userName == '') {
-            getUserName();
-        }
-        localStorage.setItem('userName', JSON.stringify(userName));
-        var userWithLocalStorage = JSON.parse(localStorage.getItem('userName'));
-        var changeUserName = userWithLocalStorage.charAt(0).toUpperCase() + userWithLocalStorage.slice(1) + ' ,';
-        document.querySelector('.userName').innerHTML = changeUserName;
+  function getUserName() {
+    var userName = localStorage.getItem('user') || prompt('Please, enter your name!');
+    var reg = userName.match(/\s/g);
+    if (userName === null || userName === undefined || reg) {
+      getUserName();
     }
+    var firstLetNameToUpperCase = userName.charAt(0).toUpperCase() + userName.slice(1);
+    document.querySelector('.userName').innerHTML = firstLetNameToUpperCase;
 
-    getUserName();
+    return firstLetNameToUpperCase;
+  }
 
-    var applyLanguage = function (lang) {
-        // alert('Now language is: ' + lang);
-    };
+  getUserName();
 
-    function defLang() {
-        var classVisible = document.querySelectorAll('.lang-ua');
 
-        for (var k = 0; k < classVisible.length; k++) {
-            classVisible[k].classList.add('visible');
-        }
+  function defLang() {
+    var getLang = localStorage.getItem('lang');
+    var classVisible = document.querySelectorAll('#welcome-message span.lang-' + getLang) || document.querySelectorAll('.lang-ua');
+
+    for (var l = 0; l < classVisible.length; l++) {
+      classVisible[l].classList.add('visible');
     }
+  }
 
-    defLang();
+  defLang();
 
-    var getAllInput = document.querySelectorAll('input');
 
-    for (var i = 0; i < getAllInput.length; i++) {
+  function saveLangToLocalStor(lang) {
+    var btnSaveLang = document.querySelector('#btn');
+    btnSaveLang.addEventListener('click', function () {
+      localStorage.setItem('lang', lang);
+    });
+  }
 
-        getAllInput[i].addEventListener('click', function () {
-            var currentLang = document.querySelector('input[name = "lang"]:checked').id;
-            var greetLangList = document.querySelectorAll('#welcome-message span.lang-' + currentLang);
-            var elemWithClassVisible = document.querySelectorAll('.visible');
+  function saveNameToLocalStr() {
+    var btnSave = document.querySelector('#btn');
+    btnSave.addEventListener('click', function () {
+      localStorage.setItem('user', getUserName());
+    });
+  }
 
-            applyLanguage(currentLang);
+  saveNameToLocalStr();
 
-            for (var k = 0; k < elemWithClassVisible.length; k++) {
-                // console.log(elemWithClassVisible[k]);
-                elemWithClassVisible[k].classList.remove('visible');
-            }
+  var getAllInput = document.querySelectorAll('input');
 
-            for (var j = 0; j < greetLangList.length; j++) {
-                greetLangList[j].classList.add('visible');
-            }
+  for (var i = 0; i < getAllInput.length; i++) {
 
-        });
-    }
+    getAllInput[i].addEventListener('click', function () {
+      var currentLang = document.querySelector('input[name = "lang"]:checked').id;
+      var greetLangList = document.querySelectorAll('#welcome-message span.lang-' + currentLang);
+      var elemWithClassVisible = document.querySelectorAll('.visible');
+      saveLangToLocalStor(currentLang);
+
+      for (var k = 0; k < elemWithClassVisible.length; k++) {
+        elemWithClassVisible[k].classList.remove('visible');
+      }
+
+      for (var j = 0; j < greetLangList.length; j++) {
+        greetLangList[j].classList.add('visible');
+      }
+    });
+  }
 
 })();
 
