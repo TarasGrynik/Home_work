@@ -1,9 +1,14 @@
 (function () {
   function getUserName() {
-    var userName = localStorage.getItem('user') || prompt('Please, enter your name!');
-    var reg = userName.match(/\s/g);
-    if (userName === null || userName === undefined || reg) {
-      getUserName();
+    var userName = localStorage.getItem('user');
+
+    if (!userName) {
+      var userName = prompt('Please, enter your name!');
+      localStorage.setItem('user', userName);
+      var reg = userName.match(/\s/g);
+      if (userName === null || userName === undefined || reg) {
+        getUserName();
+      }
     }
     var firstLetNameToUpperCase = userName.charAt(0).toUpperCase() + userName.slice(1);
     document.querySelector('.userName').innerHTML = firstLetNameToUpperCase;
@@ -17,7 +22,6 @@
   function defLang() {
     var getLang = localStorage.getItem('lang');
     var classVisible = document.querySelectorAll('#welcome-message span.lang-' + getLang) || document.querySelectorAll('.lang-ua');
-
     for (var l = 0; l < classVisible.length; l++) {
       classVisible[l].classList.add('visible');
     }
