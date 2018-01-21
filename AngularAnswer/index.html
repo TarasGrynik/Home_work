@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-controller="main">
+
+<input type="text" ng-model="product" placeholder="product">
+<input type="number" ng-model="quantity" placeholder="quantity">
+<button ng-click="addProduct()">add product</button>
+<br>
+<br>
+<input type="text" ng-model="filterByName" placeholder="filterByName">
+
+<ul>
+    <li ng-repeat="p in productList  | filter : filterByName track by $index ">{{p.productName}} {{p.productQuantity}}
+        <button ng-click="deleteItem(p)">delete</button>
+    </li>
+</ul>
+<script>
+
+
+  let module = angular.module("MyApp", []);
+  module.controller('main', function ($scope) {
+
+    $scope.productList = JSON.parse(localStorage.getItem("pl")) || [];
+    $scope.addProduct = () => {
+      let productWithQuantity = {
+        productName: $scope.product,
+        productQuantity: $scope.quantity
+      };
+      // []
+      $scope.productList.push(productWithQuantity);
+      localStorage.setItem("pl", JSON.stringify($scope.productList));
+      $scope.product = "";
+      $scope.quantity = "";
+    };
+
+    $scope.deleteItem = (item) => {
+      let index = $scope.productList.indexOf(item);
+      $scope.productList.splice(index, 1);
+    };
+  });
+</script>
+</body>
+</html>
