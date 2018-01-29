@@ -1,0 +1,292 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 14px Helvetica, Arial, sans-serif;
+	background: linear-gradient(#2C3C39, #8CA7A2, #8CA7A2, #8CA7A2) no-repeat;
+}
+
+img {max-width: 100%;}
+
+h1, h2  {font-family: none;}
+
+p {
+	text-align: justify;
+	line-height: 19px;
+}
+
+h3 {
+	padding-left: 15px;
+	color: #626665;
+}
+
+.wrapper {
+	width: 65%;
+	margin: 0 auto;
+}
+
+header {position: relative;}
+
+header a > img {
+	position: absolute;
+    max-width: 100%;
+    top: 10%;
+    left: 3%;
+    animation: myAnime 2s linear 1s alternate;
+}
+.logo {
+	width: 100%;
+
+}
+
+.navigation ul {
+	-ms-display: flex;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	flex-wrap: wrap;
+	margin-top: -4px;
+}
+
+.navigation  ul li {
+	list-style: none;
+	cursor: pointer;
+	flex-grow: 1;
+	background: #4B96AD;
+	padding: 7px;
+}
+
+.navigation a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.navigation li:nth-child(even) {
+	background: #133457;
+}
+.navigation li:nth-child(even):hover {
+	background: #0000FD;
+	transform: scale(1.1);
+	box-shadow:inset 0 0 5px #00FDE4;
+}
+
+.navigation li:nth-child(2n+1):hover {
+	background: green;
+	transform: scale(1.1);
+	box-shadow:inset 0 0 5px;
+}
+
+.main {
+	background-color: #fff;
+	background-image: url(../img/top_left_corner.gif);
+	background-repeat: no-repeat;
+}
+
+.leftSide {	
+	width: 65%;
+	box-sizing: border-box;
+	float: left;
+	padding: 20px 15px 20px 40px;
+}
+
+.rightSide {
+	width: 35%;
+	position: relative;
+	box-sizing: border-box;
+	padding: 20px 40px 20px 15px;
+	float: right;
+}
+
+.clearfix {clear: both;}
+
+.leftSide > h1 {
+	color: #265370;
+	padding: 0 0 20px;
+}
+.leftSide > h2 {
+	color: #265370;
+	padding: 20px 0;
+}
+
+.leftSide ul {
+	padding-left: 50px;
+	color: #153159;
+}
+
+.leftSide img {
+	width: 100%;
+	margin: 20px 0 0 ;
+}
+
+.leftSide p>span {background-color: #D0F343;}
+
+.list {
+	padding: 10px 0 20px;
+    background-color: #EBEACB;
+    border: 10px solid #fff;
+    box-shadow: 0 0 0 1px #E4E4E4;
+    margin-top: 20px;
+}
+
+.list p {
+	padding-top: 0;
+	line-height: inherit;
+}
+
+
+.rightSide h2 {
+	color: #8DAA10;
+	padding: 0 0 20px;
+}
+
+.rightSide p {
+	border-bottom: 1px dashed #CDCDCD;
+	padding: 0 0 20px 0;
+}
+
+.read_more {
+	position: absolute;
+	right: 35px;
+}
+
+.custom {
+	width: 100%;
+	padding: 30px 0 25px;
+}
+
+.text {padding-top: 0;}
+
+footer {
+	background: url("../img/footer_bg.jpg") no-repeat;
+	background-size: cover;
+}
+
+footer ul li {
+	list-style: none;
+	display: inline-block;
+	padding: 0 15px;
+}
+
+footer > ul {padding: 10px 0 30px 10px;}
+
+footer a {
+	text-decoration: none;
+	color: #75BCD0;
+}
+
+footer li:hover {transform: scale(1.2);}
+
+footer {position: relative;}
+
+footer img {
+	position: absolute;
+	right: 3%;
+    top: 17%;
+}
+
+         /*****Animation******/
+
+@keyframes myAnime{
+	from {
+		transform: rotate(0deg);
+	}
+
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	body {
+	font: 17px Helvetica, Arial, sans-serif;
+	}
+	header a > img {
+		width: 17%;
+	}
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (max-width: 979px) and (min-width: 768px) {
+	.wrapper {
+		width: 85%;
+	}
+
+	footer img {
+		width: 25%;
+	}
+
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.wrapper {
+		width: 90%;
+	}
+
+	footer img {
+	    width: 28%;
+	    top: 55%;
+	}
+	.navigation ul li:last-child {
+		border: 1px solid;
+	    border-radius: 6px;
+	}
+	.navigation ul li:last-child:hover {
+		border: 1px solid;
+	    border-radius: 6px;
+	    transform: scale(1);
+	}
+	.leftSide {
+		float: none;
+		width: 100%;
+		box-sizing: border-box;
+		margin-bottom: 40px;
+		padding: 15px; 
+	}
+	.rightSide {
+		float: none;
+		width: 100%;
+		box-sizing: border-box; 
+		padding: 15px; 
+		padding-bottom: 30px;
+	}
+
+	.navigation ul li:last-child {
+		border: 1px solid;
+	    border-radius: 6px;
+	    width: 100%;
+	}
+
+
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.wrapper {
+		width: 100%;
+	}
+
+	.navigation ul li:last-child {
+		border: 1px solid;
+	    border-radius: 6px;
+	    width: 100%;
+	}
+	.navigation ul li:nth-child(6) {
+		border: 1px solid;
+	    border-radius: 6px;
+	    width: 100%;
+	}
+	.navigation ul li:nth-child(5) {
+		border: 1px solid;
+	    border-radius: 6px;
+	    width: 100%;
+	}
+}
+
